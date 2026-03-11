@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Technite</title>
+  <meta name="description" content="Contact Technite to plan your scientific conference, digital platform, or visualization initiative.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='32' height='32' fill='%23125966'/%3E%3Crect x='32' width='32' height='32' fill='%23c6562f'/%3E%3Crect y='32' width='32' height='32' fill='%23eabd48'/%3E%3Crect x='32' y='32' width='32' height='32' fill='%23788290'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="shell topbar">
+      <a class="brand" href="index.html" aria-label="Technite Home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="tile tile-a"></span>
+          <span class="tile tile-b"></span>
+          <span class="tile tile-c"></span>
+          <span class="tile tile-d"></span>
+        </span>
+        <span class="brand-text">
+          <strong>TECHNITE</strong>
+          <small>Diverse Expertise Unified Solutions</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Toggle menu">Menu</button>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#ecosystem">Ecosystem</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#technology">Technology</a>
+        <a href="contact.html" class="is-active">Contact</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <section class="panel reveal page-hero">
+      <p class="eyebrow">Contact Us</p>
+      <h1>Plan your next scientific conference with Technite.</h1>
+      <p class="lead">Share your event goals, audience profile, and timeline. Our team will return with a focused implementation proposal.</p>
+      <div class="orbit-graphic" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section class="panel reveal">
+      <div class="split">
+        <div>
+          <h2>Start a Conversation</h2>
+          <p>Email: <a href="mailto:hello@technite.net">hello@technite.net</a></p>
+          <p>Business Hours: Sunday to Thursday, 9:00 AM to 6:00 PM</p>
+          <p>Services: Conference organization, scientific visualization, digital platforms, concierge services.</p>
+        </div>
+        <form class="contact-form" action="mailto:hello@technite.net" method="post" enctype="text/plain">
+          <label>
+            Full Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Organization
+            <input type="text" name="organization">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Project Type
+            <select name="project_type">
+              <option>Scientific Conference</option>
+              <option>Scientific Visualization</option>
+              <option>Digital Platform</option>
+              <option>Integrated Solution</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer reveal">
+    <div class="shell footer-layout">
+      <div>
+        <h2>Diverse Expertise. Unified Solutions.</h2>
+        <p>Technology-driven scientific conferences and communication platforms.</p>
+      </div>
+      <div class="footer-actions">
+        <a class="btn btn-ghost light" href="jobs.html">Jobs</a>
+        <a class="btn btn-ghost light" href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
