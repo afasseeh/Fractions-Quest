@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jobs | Technite</title>
-  <meta name="description" content="Explore career opportunities at Technite across conference operations, scientific design, and digital platforms.">
+  <meta name="description" content="Explore and apply to open roles at Technite.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='32' height='32' fill='%23125966'/%3E%3Crect x='32' width='32' height='32' fill='%23c6562f'/%3E%3Crect y='32' width='32' height='32' fill='%23eabd48'/%3E%3Crect x='32' y='32' width='32' height='32' fill='%23788290'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,37 +45,50 @@
     <section class="panel reveal page-hero">
       <p class="eyebrow">Jobs</p>
       <h1>Build next-generation scientific experiences with Technite.</h1>
-      <p class="lead">We hire people who combine scientific curiosity with high operational and technical standards.</p>
-      <div class="orbit-graphic" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </div>
+      <p class="lead">Our jobs are managed from the Technite admin panel. The organizer role is always open.</p>
     </section>
 
     <section class="panel reveal">
       <h2>Open Roles</h2>
-      <div class="job-list">
-        <article class="job-card">
-          <h3>Conference Operations Manager</h3>
-          <p>Lead planning and execution of medical congresses, workshops, and large-scale scientific events.</p>
-          <p><strong>Type:</strong> Full-time</p>
-        </article>
-        <article class="job-card">
-          <h3>Scientific Content Designer</h3>
-          <p>Create infographics, scientific presentations, and visual assets for high-impact communication.</p>
-          <p><strong>Type:</strong> Full-time</p>
-        </article>
-        <article class="job-card">
-          <h3>Digital Platform Specialist</h3>
-          <p>Support conference websites, educational portals, and digital engagement experiences.</p>
-          <p><strong>Type:</strong> Full-time</p>
-        </article>
-        <article class="job-card">
-          <h3>Client Success Coordinator</h3>
-          <p>Coordinate stakeholder communication and concierge support for speakers, sponsors, and attendees.</p>
-          <p><strong>Type:</strong> Full-time</p>
-        </article>
-      </div>
-      <a class="btn btn-primary" href="mailto:jobs@technite.net?subject=Job%20Application">Apply via jobs@technite.net</a>
+      <div id="job-list" class="job-list"></div>
+      <p id="job-empty" class="muted" hidden>No jobs available right now.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Apply Now</h2>
+      <form id="job-application-form" class="contact-form">
+        <label>
+          Position
+          <select id="application-job-id" name="jobId" required></select>
+        </label>
+        <label>
+          Full Name
+          <input type="text" name="fullName" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" required>
+        </label>
+        <label>
+          Current Organization
+          <input type="text" name="organization">
+        </label>
+        <label>
+          LinkedIn URL
+          <input type="url" name="linkedin" placeholder="https://linkedin.com/in/username">
+        </label>
+        <label>
+          Why do you fit this role?
+          <textarea name="coverLetter" rows="5"></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Submit Application</button>
+        <p id="application-result" class="muted"></p>
+      </form>
+      <p class="muted">Admin access: <a href="admin.html">Open Jobs Admin Panel</a></p>
     </section>
   </main>
 
@@ -83,14 +96,14 @@
     <div class="shell footer-layout">
       <div>
         <h2>Driven by Science, Built with Technology.</h2>
-        <p>Join a multidisciplinary team shaping scientific conferences and communication.</p>
+        <p>Apply now or contact us for more information.</p>
       </div>
       <div class="footer-actions">
         <a class="btn btn-ghost light" href="contact.html">Contact Us</a>
         <a class="btn btn-ghost light" href="terms.html">Terms & Conditions</a>
       </div>
     </div>
-    <div class="shell footer-copy">© <span class="copyright-year"></span> Technite. All rights reserved.</div>
+    <div class="shell footer-copy">(c) <span class="copyright-year"></span> Technite. All rights reserved.</div>
   </footer>
 
   <script src="script.js"></script>

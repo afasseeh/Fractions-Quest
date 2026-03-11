@@ -1,0 +1,15 @@
+{
+  "name": "technite-website",
+  "version": "1.0.0",
+  "description": "Technite website with admin-managed jobs and applications",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
