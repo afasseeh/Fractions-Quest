@@ -551,6 +551,14 @@ h1 {
   flex-wrap: wrap;
 }
 
+.footer-copy {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, #fff 18%, transparent);
+  color: color-mix(in srgb, #fff 76%, var(--slate));
+  font-size: 0.84rem;
+}
+
 .page-main {
   padding-top: 2.2rem;
 }
@@ -612,13 +620,17 @@ h1 {
   margin: 0;
 }
 
-.terms-text {
-  margin: 0;
-  white-space: pre-wrap;
-  font-family: "Sora", sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--text);
+.legal ul {
+  margin: 0.35rem 0 0.85rem 1.1rem;
+  padding: 0;
+}
+
+.legal li {
+  margin-bottom: 0.5rem;
+}
+
+.legal p + p {
+  margin-top: 0.55rem;
 }
 
 .reveal {
