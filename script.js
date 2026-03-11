@@ -1,3 +1,10 @@
+if (window.location.protocol === "file:") {
+  const page = window.location.pathname.split("/").pop() || "index.html";
+  window.location.replace(`http://localhost:3000/${page}`);
+}
+
+const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -90,13 +97,19 @@ function injectWhatsAppFab() {
   link.rel = "noopener noreferrer";
   link.className = "whatsapp-fab";
   link.setAttribute("aria-label", "Chat with Technite on WhatsApp");
-  link.textContent = "WA";
+  link.innerHTML = `
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.45-.61-.46h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.91 2.91 4.64 4.08.65.28 1.16.45 1.56.57.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.27.23-.63.23-1.16.16-1.27-.07-.11-.25-.18-.52-.32z"/>
+      <path fill="currentColor" d="M16.03 3.2c-7.01 0-12.7 5.69-12.7 12.69 0 2.23.58 4.41 1.68 6.32L3.2 28.8l6.76-1.77a12.67 12.67 0 006.07 1.54h.01c7 0 12.69-5.69 12.69-12.69 0-3.39-1.32-6.58-3.72-8.97a12.61 12.61 0 00-8.98-3.71zm0 23.23h-.01a10.5 10.5 0 01-5.35-1.46l-.38-.22-4.01 1.05 1.07-3.9-.24-.4a10.52 10.52 0 01-1.61-5.6c0-5.8 4.72-10.52 10.53-10.52 2.81 0 5.45 1.09 7.44 3.08a10.46 10.46 0 013.08 7.44c0 5.8-4.72 10.53-10.52 10.53z"/>
+    </svg>
+  `;
   document.body.appendChild(link);
 }
 injectWhatsAppFab();
 
 async function fetchJson(url, options = {}) {
-  const response = await fetch(url, options);
+  const finalOptions = { credentials: "include", ...options };
+  const response = await fetch(`${API_BASE}${url}`, finalOptions);
   if (!response.ok) {
     const payload = await response.json().catch(() => ({}));
     throw new Error(payload.error || `Request failed: ${response.status}`);
