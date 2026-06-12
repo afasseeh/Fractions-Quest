@@ -247,7 +247,16 @@ app.patch("/api/admin/applications/:id", authRequired, async (req, res) => {
   res.json({ success: true });
 });
 
-app.use(express.static(__dirname));
+const IS_VERCEL = Boolean(process.env.VERCEL);
+
+app.use(express.static(__dirname, { index: false }));
+
+app.get("/", (_req, res) => {
+  const entryPoint = IS_VERCEL
+    ? path.join(__dirname, "fraction-quest", "index.html")
+    : path.join(__dirname, "index.html");
+  res.sendFile(entryPoint);
+});
 
 app.get("*", (_req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
